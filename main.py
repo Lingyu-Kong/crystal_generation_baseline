@@ -17,7 +17,7 @@ wandb.config={
 }
 
 if __name__=="__main__":
-    for num_atoms in range(2,151):
+    for num_atoms in range(60,151):
         target_energy=global_minimal[num_atoms.__str__()]
         sampler=Sampler(num_atoms,2.5,1)
         sum_step=0
