@@ -9,8 +9,8 @@ def relax(xyz,max_steps):
     atm=Atoms('Ar'+str(N),positions=xyz)
     atm.calc=calc
     dyn = BFGS(atm,logfile=None)
-    dyn.run(fmax=0.0001,steps=max_steps)
-    return dyn.get_number_of_steps(),atm.get_potential_energy()
+    dyn.run(fmax=0.005,steps=max_steps)
+    return dyn.get_number_of_steps(),atm.get_potential_energy(),atm.get_positions()
 
 def compute(xyz):
     N=len(xyz)
