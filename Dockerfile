@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.1.0-cudnn8-devel-ubuntu20.04
+FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
@@ -16,8 +16,8 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
     conda create -n crystal_generation -y python=3.8.13 && \
     conda activate crystal_generation && \
     conda install pip -y && \
-    conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch && \
-    conda install pyg -c pyg && \
+    conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -y&& \
+    conda install pyg -c pyg -y&& \
     pip install ase==3.22 && \
     pip install autopep8 && \
     pip install jupyterlab && \
